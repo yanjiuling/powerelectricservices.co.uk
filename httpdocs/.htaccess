@@ -1,0 +1,31 @@
+php_value auto_prepend_file /Users/Steve/Sites/powerelectricservices.co.uk/psycho.php
+ErrorDocument 404 /error_pages/404.php
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+Options -Indexes
+RewriteEngine On
+RewriteBase /
+
+#Rewrites...
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d 
+RewriteRule .* - [L]
+
+RewriteCond %{QUERY_STRING} ^[^=]*$
+RewriteCond %{QUERY_STRING} %2d|\- [NC]
+RewriteRule .? - [F,L]
+
+#JS/CSS combinator
+RewriteRule ^admin/css/(.*\.css) admin/combine.php?type=css&files=$1
+RewriteRule ^admin/js/(.*\.js) admin/combine.php?type=javascript&files=$1
+#RewriteRule ^css/(.*\.css) combine.php?type=css&files=$1
+#RewriteRule ^js/(.*\.js) combine.php?type=javascript&files=$1
+
+#Pages
+RewriteRule ^([A-Za-z0-9-]+)/?$ page.php?level1=$1 [N,QSA]
+RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ page.php?level1=$1&level2=$2 [N,QSA]
+RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ page.php?level1=$1&level2=$2&level3=$3 [N,QSA]
+RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ page.php?level1=$1&level2=$2&level3=$3&level4=$4 [N,QSA]
+RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ page.php?level1=$1&level2=$2&level3=$3&level4=$4&level5=$5 [L,QSA]
+
+</IfModule>

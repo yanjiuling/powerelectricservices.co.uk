@@ -1,0 +1,134 @@
+/* !COLOUR REFERENCE  */
+
+/*
+*/
+
+/* !CSS RESETS */
+/*-----------------------------------------------------------------------------------*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;margin:0;padding:0}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object{display:block}a img{border:0}figure{position:relative}figure img{width:100%}
+
+/* !GLOBAL LAYOUT STYLES */
+/*-----------------------------------------------------------------------------------*/
+
+.left { float: left; }
+.right { float: right; }
+.noFloat { float: none; }
+.clear { clear: both; }
+.inactive { color: #999999; }
+.inline { display: inline !important; width: auto !important; }
+.autowidth { width: auto; }
+.hidden { display: none; }
+.opacity50 {
+	filter: alpha(opacity:50);
+	KHTMLOpacity: 0.50;
+	MozOpacity: 0.50;
+	opacity: 0.50;
+}
+.centred { margin-left: auto; margin-right: auto; }
+
+/* !TEMPLATE  */
+/*-----------------------------------------------------------------------------------*/
+body {
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	background: #000;
+}
+h1,h2,h3,h4,h5,h6 {
+}
+h1 {
+}
+h2 {
+}
+h3 {
+}
+p {
+}
+ul {
+}
+li {
+}
+#container {
+	margin: 0 auto;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+/* !HEADER  */
+/*-----------------------------------------------------------------------------------*/
+
+#header {
+}
+
+
+/* !NAV  */
+/*-----------------------------------------------------------------------------------*/
+.nav {
+	list-style: none;
+}
+.nav li {
+	padding: 0;
+	margin: 0;
+	background: none;
+}
+.mainNavHolder {
+	overflow: hidden;
+}
+ul.mainNav li {
+
+}
+ul.mainNav li a {
+}
+
+/* !CONTENT  */
+/*-----------------------------------------------------------------------------------*/
+#content {
+	overflow: hidden;
+}
+#breadcrumbs {
+}
+#breadcrumbs a {
+}
+
+#mainContent {
+	overflow: hidden;
+}
+
+#secContent {
+	padding-top: 4px;
+}
+
+
+/* !FORMS  */
+/*-----------------------------------------------------------------------------------*/
+
+
+/* !FOOTER */
+/*-----------------------------------------------------------------------------------*/
+#footer {
+	overflow: hidden;
+}
+#footer #footer_text {
+}
+#footer p,
+#footer p a {
+}
+#footer a:hover {
+}
+#socnet .icon {
+	display: block;
+	width: 25px;
+	height: 30px;
+	text-indent: -2000px;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	float: left;
+	margin-left: 8px;
+}
+#socnet .icon.twitter { background-image: url(../images/icon_twitter.png) }
+#socnet .icon.facebook { background-image: url(../images/icon_facebook.png) }
+#socnet .icon.pinterest { background-image: url(../images/icon_pinterest.png) }
+
+#socnet .icon:hover { background-position: 0 -30px }
