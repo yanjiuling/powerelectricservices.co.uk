@@ -81,5 +81,13 @@ foreach($languages as $l)
 	}
 }
 ?>
-<link rel="stylesheet" type="text/css" media="all" href="<?=MASTER_URL?>css/styles.css"/>
-<link rel="stylesheet" media="screen" href="<?php echo MASTER_URL; ?>css/responsive.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="<?=SITE_URL?>css/styles.css"/>
+
+<script src="<?=SITE_URL?>style/js/respond.js"></script>
+<!--[if lte IE 8]>
+<script src="<?=SITE_URL?>js/html5.js"></script>
+<![endif]-->
+<script src="<?=SITE_URL?>js/jquery-1.9.1.min.js"></script>
+<script src="<?=SITE_URL?>js/jquery.fancybox.pack.js"></script>
+<script src="<?=SITE_URL?>js/jquery.fitvids.js"></script>
+<script src="<?=SITE_URL?>js/global-ck.js"></script>

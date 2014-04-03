@@ -257,4 +257,89 @@ function image_html($img,$args='')
 	
 	return $output;
 }
+function count_proj_children($projID)
+{
+	$query = "SELECT COUNT(*) as 'count' FROM projects WHERE proj_parent = '$projID'";
+	$result = dbQuery($query);
+	if(dbRows($result)>0)
+	{
+		$row = dbAssoc($result);
+		return $row['count'];
+	}
+	
+}
+
+function serviceNav($class='')
+{
+	global $proj;
+	$build = '';
+	$projects = build_project_menu('active_only=true');
+	//print_r($projects);
+	$proj_count = count($projects);
+	if($proj_count > 0)
+	{
+	    $build .= "<ul";
+	    $build .= $class !='' ? ' class="'.$class.'"' : '';
+	    $build .= ">\n";
+	    $level = 1;
+	    $i=1;
+		foreach($projects as $project)
+		{
+			
+			$mproj = new project($project['id']);
+			if($mproj->id !='')
+			{
+				$proj_link = SITE_URL."services/".$mproj->slug;
+				
+				if($i>1)
+				{
+					if($project['level'] > $level) 
+					{
+						$build .= "\n<ul class=\"level_".$project['level']."\">\n";
+					}
+					else
+					{
+						$build .= "</li>\n";
+						if($project['level'] < $level) 
+						{
+							$build .= "\n</ul>\n";
+						}
+					}
+				}
+				$build .= "<li";
+				if(isset($proj) && ($proj->id == $mproj->id || $proj->parent == $mproj->id))
+				{
+					$build .= ' class="active"';
+					$arr_class = "contract";
+				}
+				else
+				{
+					$arr_class = "expand";
+				}
+				$build .= "><a href=\"$proj_link\">{$mproj->menuTitle}</a>";
+				$build .= count_proj_children($mproj->id) > 0 ? "<a href=\"#\" class=\"arrow $arr_class\">+</a>" : "";
+			}
+			if($i==$proj_count)
+			{
+				$build .= "</li>\n";
+			}
+			else
+			{
+				$i++;
+			}
+			$level = $project['level'];
+		}
+
+		
+		if($level > 1) 
+		{
+			$build .= "\n</ul>\n";
+			$build .= "</li>\n";
+			$build .= "\n</ul>\n";
+		}
+	}
+	if($level <= $project['level']) $build .= "</ul>\n";
+
+	return $build;
+}
 ?>
