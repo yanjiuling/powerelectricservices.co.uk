@@ -1,7 +1,11 @@
-/* !COLOUR REFERENCE  */
+/* !COLOURS  */
 
-/*
-*/
+@d-blue:#061e2c;
+@l-blue:#4b7d9c;
+@cyan:#00aced;
+@yellow:#fde200;
+@orange:#fca40f;
+@p-grey:#f3f4f5;
 
 /* !CSS RESETS */
 /*-----------------------------------------------------------------------------------*/
@@ -19,20 +23,24 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 .inline { display: inline !important; width: auto !important; }
 .autowidth { width: auto; }
 .hidden { display: none; }
-.opacity50 {
-	filter: alpha(opacity:50);
-	KHTMLOpacity: 0.50;
-	MozOpacity: 0.50;
-	opacity: 0.50;
-}
 .centred { margin-left: auto; margin-right: auto; }
 
-/* !TEMPLATE  */
-/*-----------------------------------------------------------------------------------*/
-body {
-	font-family: Helvetica, Verdana, Arial, sans-serif;
-	background: #000;
+* {
+	font-family: Helvetica, Arial, sans-serif;
 }
+html {
+	font-size:16px;
+	height: 100%;
+}
+body {
+	font-size:62.5%;
+	display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+/* !TYPE  */
+/*-----------------------------------------------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
 }
 h1 {
@@ -47,19 +55,42 @@ ul {
 }
 li {
 }
-#container {
-	margin: 0 auto;
-}
 a {
 	text-decoration: none;
 }
 a:hover {
 	text-decoration: underline;
 }
+/* !TEMPLATE  */
+/*-----------------------------------------------------------------------------------*/
+#full_wrap {
+	height: 100%;
+}
+#content_wrap {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.row {
+    display: table-row;
+    height: 1px;
+	vertical-align: top;
+}
+.row.expand {
+    height: 100%;
+}
+.container {
+	width: 965px;
+	margin: 0 auto;
+}
+
 /* !HEADER  */
 /*-----------------------------------------------------------------------------------*/
 
 #header {
+	overflow: hidden;
+	background: @d-blue;
+	height: 20px;
 }
 
 
@@ -109,6 +140,8 @@ ul.mainNav li a {
 /*-----------------------------------------------------------------------------------*/
 #footer {
 	overflow: hidden;
+	background: @d-blue;
+	height: 20px;
 }
 #footer #footer_text {
 }
@@ -132,3 +165,5 @@ ul.mainNav li a {
 #socnet .icon.pinterest { background-image: url(../images/icon_pinterest.png) }
 
 #socnet .icon:hover { background-position: 0 -30px }
+
+@import 'responsive.less';
