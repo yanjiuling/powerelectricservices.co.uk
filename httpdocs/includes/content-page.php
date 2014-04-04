@@ -18,7 +18,7 @@ switch($page_type)
 				<?php
 			}
         	
-            include(SRV_ROOT."forms/contact.php");
+            include(SRV_ROOT."forms/form-contact.php");
             ?>
          
         </div><!--contact-form-->

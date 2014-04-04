@@ -1,7 +1,6 @@
 <?php
 include_once(SRV_ROOT."admin/pages/class.page.php");
 include_once(SRV_ROOT."admin/extensions/projects/functions.php");
-include_once(SRV_ROOT."admin/extensions/slideshow/functions.php");
 include_once(SRV_ROOT."includes/functions.php");
 get_page_details();
 include(SRV_ROOT."includes/meta.php");

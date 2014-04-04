@@ -12,18 +12,10 @@
 		<?php
 	}
 	?>
-	<label for="cont_name">Name <span class="required-marker">*</span></label>
-	<input type="text" name="name" size="26" id="cont_name" value="<?= isset($fields['name'])?$fields['name']:''; ?>">
-
-	<label for="cont_addr">Address</label>
-	<textarea name="address" cols="24" rows="5" id="address"><?= isset($fields['address'])?$fields['address']:''; ?></textarea>
-
-	<label for="cont_phone">Telephone <span class="required-marker">*</span></label>
-	<input type="text" name="phone" size="26" id="cont_phone" value="<?= isset($fields['phone'])?$fields['phone']:''; ?>">
-
-	<label for="cont_email">Email <span class="required-marker">*</span></label>
-	<input type="text" name="email" size="26" id="cont_email" value="<?= isset($fields['email'])?$fields['email']:''; ?>">
-
-	<input type="submit" name="submit" class="button" value="Submit">
+	<label>Name</label><br/><input type="text" name="name" style="width:100%;" value="<?=isset($fields['name']) ? $fields['name'] : ''?>"><br/>
+	<label>Email</label><br/><input type="text" name="email" style="width:100%;" value="<?=isset($fields['email']) ? $fields['email'] : ''?>"><br/>
+    <label>Phone number</label><br/><input type="text" name="phone" style="width:100%;" value="<?=isset($fields['phone']) ? $fields['phone'] : ''?>"><br/><br/>
+    <label>Message</label><br/><textarea name="message" rows="10" cols="30" style="width:100%;"><?=isset($fields['message']) ? $fields['message'] : ''?></textarea>
+    <br/><input id="submit" class="button" type="submit" name="submit" value="Send" />
 
 </form>

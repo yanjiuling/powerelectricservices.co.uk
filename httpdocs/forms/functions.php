@@ -48,10 +48,10 @@ function formSubmit($recipients)
 			$subject = "Online enquiry";
 			$greeting = "You have received the following equiry.";
 			$success = lang('SEND_SUCCESS');
-			$rules[] = "required,name,Enter your name.";
-			$rules[] = "required,email,Enter your email address.";
-			$rules[] = "valid_email,email,Enter a valid email address.";
-			$rules[] = "required,phone,Enter your phone number.";
+			$rules[] = "required,name,Please enter your name.";
+			$rules[] = "required,email,Please enter your email address.";
+			$rules[] = "valid_email,email,Please enter a valid email address.";
+			$rules[] = "required,phone,Please enter your phone number.";
 			break;
 
 			case "complaint":

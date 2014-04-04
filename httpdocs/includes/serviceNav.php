@@ -8,7 +8,7 @@
 		<?= serviceNav(); ?>
 
 		<div id="service-logos">
-			<?=$globalSettings['sidebar_foot']?>
+			<?=str_ireplace($find,$replace,$globalSettings['sidebar_foot'])?>
 		</div>
 	</div>
 		
