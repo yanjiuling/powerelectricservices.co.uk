@@ -200,6 +200,7 @@ function twitter_feed($args)
 
 function image_html($img,$args='')
 {
+	global $find,$replace;
 	$output = '';
 	if(is_string($args))
 	{
@@ -215,12 +216,13 @@ function image_html($img,$args='')
 	
 	if($img->url !='')
 	{
+		$link = str_ireplace($find, $replace, $img->url);
 		$output .= '<a';
 		if($set['link_class'] != '')
 		{
 			$output .= ' class="'.$set['link_class'].'"';
 		}
-		$output .= ' href="'.$img->url.'" target="'.$img->target.'"';
+		$output .= ' href="'.$link.'" target="'.$img->target.'"';
 		if($set['link_title'] != '')
 		{
 			$output .= ' title="'.$set['link_title'].'"';
